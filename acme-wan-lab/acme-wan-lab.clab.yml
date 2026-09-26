@@ -1,0 +1,43 @@
+name: acme-wan-lab
+
+topology:
+  nodes:
+    isp-peer:
+      kind: linux
+      image: frrouting/frr:latest
+      cap-add:
+        - NET_ADMIN
+      sysctls:
+        net.ipv4.ip_forward: 1
+        net.ipv4.conf.all.rp_filter: 0
+      binds:
+        - configs/isp-peer/daemons:/etc/frr/daemons
+        - configs/isp-peer/frr.conf:/etc/frr/frr.conf
+
+    hq-r1:
+      kind: linux
+      image: frrouting/frr:latest
+      cap-add:
+        - NET_ADMIN
+      sysctls:
+        net.ipv4.ip_forward: 1
+        net.ipv4.conf.all.rp_filter: 0
+      binds:
+        - configs/hq-r1/daemons:/etc/frr/daemons
+        - configs/hq-r1/frr.conf:/etc/frr/frr.conf
+
+    br-r1:
+      kind: linux
+      image: frrouting/frr:latest
+      cap-add:
+        - NET_ADMIN
+      sysctls:
+        net.ipv4.ip_forward: 1
+        net.ipv4.conf.all.rp_filter: 0
+      binds:
+        - configs/br-r1/daemons:/etc/frr/daemons
+        - configs/br-r1/frr.conf:/etc/frr/frr.conf
+
+  links:
+    - endpoints: ["isp-peer:eth1", "hq-r1:eth1"]
+    - endpoints: ["hq-r1:eth2", "br-r1:eth1"]

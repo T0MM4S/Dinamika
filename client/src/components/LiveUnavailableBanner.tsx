@@ -1,0 +1,6 @@
+import { AlertTriangle, Info } from "lucide-react";
+
+export function LiveUnavailableBanner({ error, poweredOff = false }: { error: unknown; poweredOff?: boolean }) {
+  if (poweredOff) return <div className="mb-5 flex items-start gap-3 border border-[#44515a] bg-[#121b21] px-4 py-3 text-[11px] text-[#aebdc5]"><Info size={16} className="mt-0.5 shrink-0 text-[#8fa7b4]" /><div><div className="font-semibold tracking-wide text-[#d2e0e6]">LIVE LAB IS POWERED OFF</div><div className="mt-1 text-[#8fa1aa]">Run the Docker/Containerlab lab locally to see real BGP/OSPF telemetry. The modeled campus topology remains available.</div><div className="mono mt-1 text-[10px] text-[#718590]">No live values are being substituted.</div></div></div>;
+  return <div className="mb-5 flex items-start gap-3 border border-[#713a40] bg-[#29161a] px-4 py-3 text-[11px] text-[#ed9ba0]"><AlertTriangle size={16} className="mt-0.5 shrink-0" /><div><div className="font-semibold tracking-wide">LIVE TELEMETRY ERROR</div><div className="mt-1 text-[#d98c91]">The lab may be running, but the live telemetry request failed. Switch back to DEMO MODE or retry LIVE when the backend is reachable.</div><div className="mono mt-1 text-[10px] text-[#b66f77]">{error instanceof Error ? error.message : "Failed to fetch live lab snapshot"}</div></div></div>;
+}

@@ -1,0 +1,3 @@
+import { ArrowLeft, Compass } from "lucide-react";
+import { Link } from "wouter";
+export default function NotFound() { return <div className="legal-page"><div className="legal-shell text-center"><div className="mx-auto mb-5 grid h-14 w-14 place-items-center border border-[#5f93ad] bg-[#10212b] text-[#8bd5f3]"><Compass size={24} /></div><div className="kicker text-[#73c3e6]">ACME DINAMIKA / 404</div><h1>Page not found</h1><p>The requested route does not exist in this NOC or portfolio surface.</p><Link href="/" className="landing-cta"><ArrowLeft size={16} /> Back to landing</Link></div></div>; }
