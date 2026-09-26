@@ -2,9 +2,9 @@
 
 A simulated multi-site enterprise network, paired with a real BGP/OSPF routing lab — and a NOC-style web app that visualizes both, honestly.
 
-Built by [T0MM4S](https://github.com/T0MM4S) ([LinkedIn](https://www.linkedin.com/in/gent-bajrami-8637b72a2)) — a portfolio project built while transitioning from a NOC Engineer role into Network Engineering.
+Built by [T0MM4S](https://github.com/T0MM4S) ([LinkedIn](https://www.linkedin.com/in/gent-bajrami-8637b72a2)) — a portfolio project built while from a NOC Engineer into Network Engineering.
 
-**[Live demo →](#)** *(add your published URL here)*
+**[Live demo →](#)** *(https://dinamika-9p59.onrender.com))*
 
 ![ACME Dinamika topology](./Acme.png)
 *Full HQ + Branch 1 + WAN edge topology, built and configured in SwitchLab.dev*
