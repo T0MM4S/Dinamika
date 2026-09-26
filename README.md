@@ -6,7 +6,7 @@ Built by [T0MM4S](https://github.com/T0MM4S) ([LinkedIn](https://www.linkedin.co
 
 **[Live demo →](#)** *(add your published URL here)*
 
-![ACME Dinamika topology](./docs/topology-sandbox.png)
+![ACME Dinamika topology](./Acme.png)
 *Full HQ + Branch 1 + WAN edge topology, built and configured in SwitchLab.dev*
 
 ---
